@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ftpy-bstage
+  annotations:
+    github.com/project-slug: mumubstage/ftpy-bstage
+spec:
+  type: other
+  lifecycle: unknown
+  owner: adm-team
