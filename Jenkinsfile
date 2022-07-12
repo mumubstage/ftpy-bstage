@@ -31,10 +31,11 @@ pipeline {
         stage('Code Analysis (SonarQube)') {
             environment {
                 scannerHome = tool 'SonarQube Scanner'
+                sonarLogin = credentials('sonar-login')
             }
             steps {
                 withSonarQubeEnv('SonarQube Server') {
-                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.login=credentials('sonar-login') -Dproject.settings=sonar-project.properties"
+                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.login=${sonarLogin} -Dproject.settings=sonar-project.properties"
                 }
             }
         }   
