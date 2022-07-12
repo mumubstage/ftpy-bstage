@@ -1,8 +1,3 @@
-def JOB_NAME_PARTS = JOB_NAME.tokenize('/') as String[]
-def JOB_CONSOLE_NAME = JOB_NAME_PARTS[0]
-def JOB_NAMESPACE_NAME = JOB_NAME_PARTS[1]
-def JOB_BRANCH_NAME = JOB_NAME_PARTS[2]
-def BRANCH_MASTER = 'main'
 
 pipeline {
     agent {
