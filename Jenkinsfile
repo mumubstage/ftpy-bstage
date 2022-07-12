@@ -39,7 +39,7 @@ pipeline {
             }
             steps {
                 withSonarQubeEnv('SonarQube Server') {
-                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.login=${{ secrets.SONAR_LOGIN }} -Dproject.settings=sonar-project.properties"
+                    sh "${scannerHome}/bin/sonar-scanner -Dsonar.login=credentials('sonar-login') -Dproject.settings=sonar-project.properties"
                 }
             }
         }   
