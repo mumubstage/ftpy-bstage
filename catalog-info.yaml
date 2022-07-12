@@ -4,6 +4,8 @@ metadata:
   name: ftpy-bstage
   annotations:
     github.com/project-slug: mumubstage/ftpy-bstage
+    sonarqube.org/project-key: ftpy-backstage
+    jenkins.io/job-full-name: FTPy/main
 spec:
   type: service
   lifecycle: production
