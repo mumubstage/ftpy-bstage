@@ -23,7 +23,16 @@ pipeline {
             steps {
                 sh """
                 . venv/bin/activate
-                PYTHONPATH=. pytest
+                PYTHONPATH=. pytest --cov-report xml --cov=src tests/unit/
+                """
+            }
+        }
+        
+        stage('Integration tests - Python') {
+            steps {
+                sh """
+                . venv/bin/activate
+                PYTHONPATH=. pytest --cov-report term --cov=src tests/integration/
                 """
             }
         }
